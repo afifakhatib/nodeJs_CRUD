@@ -1,0 +1,14 @@
+.content {
+    height: 40px;
+    text-wrap: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+
+    :last-child {
+        height: 100%;
+        width: 100%;
+
+        text-overflow: ellipsis;
+    }
+}

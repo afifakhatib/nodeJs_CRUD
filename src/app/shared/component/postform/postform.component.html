@@ -1,0 +1,54 @@
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+        <div class="card">
+            <div class="card-header">
+                <h2 class="m-0"> {{!isInEditMode ? 'Add Post' : 'Update Post'}} </h2>
+            </div>
+            <div class="card-body">
+                <form [formGroup]="postForm" (ngSubmit)="onAddPost()">
+                    <div class="form-group">
+                        <label for="title">Title*</label>
+                        <input type="text" placeholder="Enter Title...." required class="form-control" formControlName="title">
+
+                        <ng-container
+                         *ngIf="getControls('title').touched && getControls('title').hasError('required')">
+                           <span class="text-danger">
+                               Title is <strong>Required</strong>
+                           </span>
+                        </ng-container>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="userId">UserId*</label>
+                        <select type="text" placeholder="Enter UserId..." required class="form-control" formControlName="userId">
+                           <option [value]="userId" *ngFor="let userId of userIdArr">
+                            {{userId}}
+                           </option>
+                        </select>
+                        <ng-container
+                         *ngIf="getControls('userId').touched && getControls('userId').hasError('required')">
+                           <span class="text-danger">
+                               UserId is <strong>Required</strong>
+                           </span>
+                        </ng-container>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="content">Content*</label>
+                        <textarea type="text" placeholder="Enter content...." required class="form-control" formControlName="content">
+                        </textarea>
+                        <ng-container
+                         *ngIf="getControls('content').touched && getControls('content').hasError('required')">
+                           <span class="text-danger">
+                               Content is <strong>Required</strong>
+                           </span>
+                        </ng-container>
+                        </div>
+                        <div class="button-group">
+                            <button class="btn btn-sm btn-primary"> {{!isInEditMode ? 'Add Post' : 'Update Post'}} </button>
+                        </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

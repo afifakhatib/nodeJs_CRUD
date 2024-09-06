@@ -1,0 +1,41 @@
+
+
+<div class="arrow">
+    <mat-icon style="cursor: pointer;" routerLink="/posts">arrow_back</mat-icon>
+</div>
+
+<div class="row">
+    <div class="col-md-8 offset-md-2">
+        <div class="singlePost">
+            <div class="card">
+                <div class="card-header">
+                     <h2 class="m-0">
+                         {{postObj?.title}}
+                     </h2>
+                     <div class="card-body">
+                        <div class="content">
+                              <p class="m-0">
+                                 <strong>Content :</strong> {{postObj?.content}}
+                              </p>
+                              <h3 class="m-0">
+                                <strong>UserId :</strong> {{postObj?.userId}}
+                              </h3>
+                        </div>
+                     </div>
+                     <div class="card-footer">
+                        <div class="buttons d-flex justify-content-between">
+                            <button class="btn btn-sm btn-primary" routerLink="editPost">
+                                   Edit Post
+                            </button>
+                            <button class="btn btn-sm btn-danger" (click)="onPostRemove()">
+                               Remove Post
+                            </button>
+                        </div>
+                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- {{postId | json}} -->

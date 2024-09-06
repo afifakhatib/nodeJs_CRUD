@@ -1,0 +1,28 @@
+
+
+<div class="row mt-4">
+    <div class="col-md-6 offset-md-3">
+        <div class="card">
+            <div class="card-header">
+                <h2 class="m-0">
+                    {{postObj.title}}
+                </h2>
+            </div>
+            <div class="card-body">
+                 <div class="content">
+                     <p class="m-0">
+                       <strong>Content :</strong> {{postObj.content}}
+                     </p>
+                     <p class="m-0"><strong>UserId : </strong> {{postObj.userId}} </p>
+                 </div>
+            </div>
+            <div class="card-footer">
+                 <div class="button">
+                    <button class="btn btn-sm btn-block btn-link" [routerLink]="postObj.id">
+                        See More...
+                    </button>
+                 </div>
+            </div>
+        </div>
+    </div>
+</div>
